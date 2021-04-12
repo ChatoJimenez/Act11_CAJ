@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring MVC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Suma</h1>
+            <!--BEGIN: Formulario-->
+            <form th:action="@{/sumar}" method="get" th:object="${suma}">
+                <!--FIELD: Autor-->
+                <label for="num1">Número 1</label>
+                <input type="text" name="num1" class="text-box" id="num1" th:field="*{num1}" placeholder="Ingresa el primer número">
+                <!--FIELD: Pregunta-->
+                <label class="mt-1" for="num2">Número 2</label>
+                <input type="text" class="text-box" name="num2" id="num2" th:field="*{num2}" placeholder="Ingresa el segundo número">
+                <!--BEGIN: Botón Submit-->
+                <div class="mt-2">
+                    <button type="submit" class="btn">Enviar números</button>
+                </div>
+                <!--END: Botón Submit-->
+            </form>
+            <!--END: Formulario-->
+        </div>
+    </body>
+</html>
